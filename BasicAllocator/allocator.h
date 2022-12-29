@@ -11,7 +11,14 @@ class Allocator {
  public:
   using value_type = DataType;
   void deallocate(DataType* p, std::size_t n) {
+    free(p);
     LOG(INFO) << "deallocation done. p = " << p << ", size = " << n;
+  }
+
+  DataType* allocate(std::size_t n) {
+    DataType* p = (DataType*)malloc(n * sizeof(DataType));
+    LOG(INFO) << "allocation done. p = " << p << ", size = " << n;
+    return p;
   }
 };
 

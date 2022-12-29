@@ -9,5 +9,10 @@ int main(int argc, char* argv[]) {
 
   std::vector<int, BasicAllocator::Allocator<int>> v;
 
+  v.push_back(10);
+  v.push_back(11);
+  v.push_back(12);
+  //v.push_back(13);
+
   LOG(INFO) << "main end";
 }
